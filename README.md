@@ -12,8 +12,11 @@ docker build -t python-hello-world .
 # check the docker image
 docker images
 
-# run the docker image - docker run -it -d --name container_name image_name bash
+# run the image
 docker run python-hello-world
+
+# run an image in the background with bash
+docker run -it -d --name <container_id_or_name> <image_name> bash
 
 # to list all containers
 docker container ls -a
