@@ -8,15 +8,18 @@ https://docs.docker.com/engine/reference/commandline/cli/
 
 # build an image
 docker build -t python-hello-world .
+docker image build . -t fastapi-get
 
 # check the docker image
 docker images
 
 # run the image
 docker run python-hello-world
+docker container run --name fastapi_get_container -t fastapi-get:latest -p 10000:10000
 
 # run an image in the background with bash
 docker run -it -d --name <container_id_or_name> <image_name> bash
+docker container run -d --name fastapi_get_container -t fastapi-get:latest -p 10000:10000
 
 # to list all containers
 docker container ls -a

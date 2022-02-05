@@ -1,5 +1,5 @@
 # get the latest python image
-FROM python
+FROM python:latest
 
 # add a user and set work dir
 RUN useradd -ms /bin/bash miko
