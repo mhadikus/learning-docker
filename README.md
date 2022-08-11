@@ -50,15 +50,15 @@
 # Kubernetes
 - https://kubernetes.io/docs/tutorials/kubernetes-basics/
 - https://www.guru99.com/kubernetes-tutorial.html
-- Pod: a collection of Containers
-- Namespace: name to organize Pods
-- Node: hardware for running Pods
-- Cluster: a collection of Nodes
-- Service: network abstraction over a set of pods
-- Server: Kubernetes Control plane, e.g., api-server, etcd,etc
-- Client: kubectl
+- `Pod`: a collection of Containers
+- `Namespace`: name to organize Pods
+- `Node`: hardware for running Pods
+- `Cluster`: a collection of Nodes
+- `Service`: network abstraction over a set of pods
+- `Server`: Kubernetes Control plane, e.g., api-server, etcd,etc
+- `Client`: kubectl
 
-## enable Kubernetes on Docker Desktop
+## Kubernetes on Docker Desktop
 - https://docs.docker.com/desktop/kubernetes/
 - https://docs.docker.com/get-started/orchestration/
 - https://docs.docker.com/get-started/kube-deploy/
@@ -67,4 +67,4 @@
 - kubectl apply -f ping-pod.yaml
 - kubectl get pods
 - kubectl logs ping-pod
-- kubectl delete -f pod.yaml
+- kubectl delete -f ping-pod.yaml
