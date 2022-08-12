@@ -69,10 +69,15 @@
 - kubectl logs ping-pod
 - kubectl delete -f ping-pod.yaml
 
-## to deploy the simple ping using deployment yaml file
-- kubectl apply -f ping-deployment.yaml
+## to deploy the [docker/getting-started](https://hub.docker.com/r/docker/getting-started) image with a service
+- kubectl apply -f docker-getting-started-deployment.yaml
 - kubectl get deployments
-- kubectl rollout status deployment/ping-deployment
-- kubectl logs deployment/ping-deployment
+- kubectl rollout status deployment/getting-started-deployment
+- kubectl logs deployment/getting-started-deployment
 - kubectl get services
-- kubectl delete -f ping-deployment.yaml
+- browse to http://localhost:30001
+- `port: 80` the port on which the app is running inside the container
+- `targetPort: 80` the port on the pod where the service is running
+- `nodePort: 30001` the port on the node where external traffic comes in
+- The service will route traffic from port 30001 on your host to port 80 inside the pods it routes to
+- kubectl delete -f docker-getting-started-deployment.yaml

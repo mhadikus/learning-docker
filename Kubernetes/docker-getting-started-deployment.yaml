@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: getting-started-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: getting-started
+  template:
+    metadata:
+      labels:
+        app: getting-started
+    spec:
+      containers:
+      - name: getting-started-container
+        image: docker/getting-started
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: getting-started-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    app: getting-started
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30001
