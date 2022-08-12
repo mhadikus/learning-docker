@@ -90,3 +90,21 @@
 - docker pull localhost:4000/fastapi-get
 - kubectl apply -f fastapi-get.yaml
 - docker container stop registry && docker container rm -v registry
+
+***
+
+# Helm
+- https://helm.sh/docs/intro/quickstart/
+- https://helm.sh/docs/intro/install/
+- [What is a Helm Chart?](https://www.freecodecamp.org/news/what-is-a-helm-chart-tutorial-for-kubernetes-beginners/)
+
+## to install nginx using helm charts
+- https://www.golinuxcloud.com/kubernetes-helm-charts/#51_Create_a_new_chart
+- helm create nginx-chart
+- helm lint nginx-chart
+- helm install --dry-run nginx nginx-chart/
+- helm install nginx nginx-chart/
+- kubectl get all
+- kubectl get pods -o wide
+- browse to http://localhost:30004
+- helm uninstall nginx
