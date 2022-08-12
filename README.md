@@ -81,3 +81,12 @@
 - `nodePort: 30001` the port on the node where external traffic comes in
 - The service will route traffic from port 30001 on your host to port 80 inside the pods it routes to
 - kubectl delete -f docker-getting-started-deployment.yaml
+
+## to deploy and run a locally built image in Kubernetes
+- Push the local image to [Docker Registry](https://docs.docker.com/registry/)
+- docker run -d -p 4000:5000 --name registry registry:2
+- docker image tag fastapi-get localhost:4000/fastapi-get
+- docker push localhost:4000/fastapi-get
+- docker pull localhost:4000/fastapi-get
+- kubectl apply -f fastapi-get.yaml
+- docker container stop registry && docker container rm -v registry

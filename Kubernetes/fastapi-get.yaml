@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-get-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-get
+  template:
+    metadata:
+      labels:
+        app: fastapi-get
+    spec:
+      containers:
+      - name: fastapi-get-container
+        image: localhost:4000/fastapi-get
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-get-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    app: fastapi-get
+  ports:
+  - port: 10000
+    targetPort: 10000
+    nodePort: 30002
