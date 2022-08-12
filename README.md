@@ -107,4 +107,5 @@
 - kubectl get all
 - kubectl get pods -o wide
 - browse to http://localhost:30004
+- If `nodePort` is not specified in `service.yaml`, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
 - helm uninstall nginx
