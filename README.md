@@ -14,11 +14,11 @@
 
 ## run the image
 - docker run python-hello-world
-- docker container run --name fastapi_get_container -t fastapi-get:latest -p 10000:10000
+- docker container run --name fastapi_get_container -t -p 10000:10000 fastapi-get:latest
 
 ## run an image in the background with bash
 - docker run -it -d --name <container_id_or_name> <image_name> bash
-- docker container run -d --name fastapi_get_container -t fastapi-get:latest -p 10000:10000
+- docker container run -d --name fastapi_get_container -t -p 10000:10000 fastapi-get:latest
 
 ## to list all containers
 - docker container ls -a
@@ -68,3 +68,11 @@
 - kubectl get pods
 - kubectl logs ping-pod
 - kubectl delete -f ping-pod.yaml
+
+## to deploy the simple ping using deployment yaml file
+- kubectl apply -f ping-deployment.yaml
+- kubectl get deployments
+- kubectl rollout status deployment/ping-deployment
+- kubectl logs deployment/ping-deployment
+- kubectl get services
+- kubectl delete -f ping-deployment.yaml
