@@ -87,6 +87,7 @@
 - docker run -d -p 4000:5000 --name registry registry:2
 - docker image tag fastapi-get localhost:4000/fastapi-get
 - docker push localhost:4000/fastapi-get
+- browse to http://localhost:4000/v2/_catalog
 - docker pull localhost:4000/fastapi-get
 - kubectl apply -f fastapi-get.yaml
 - docker container stop registry && docker container rm -v registry
