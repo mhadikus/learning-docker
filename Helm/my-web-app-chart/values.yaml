@@ -1,0 +1,32 @@
+replicaCount: 1
+
+deployment:
+  name: my-web-app
+  image: localhost:4000/my-web-app
+
+service:
+  name: my-web-app
+  port: 5000
+
+ingress:
+  name: my-web-app
+  host: my-company.com
+  port: 5000
+
+mongoCredentials:
+  name: mongo-credentials
+  # secrets such and use and pwd have to be encoded to base64
+  # use the command `echo -n my_password | base64`
+  user: dXNlcg==
+  pwd: cGFzc3dvcmQ=
+  replicaSet: mongo-replica-set
+  host1: mongo-host1
+  host2: mongo-host2
+  host3: mongo-host3
+  port1: 27017
+  port2: 27017
+  port3: 27017
+
+pods:
+  network:
+    dns_suffix: internal.my-company.com, my-company.com

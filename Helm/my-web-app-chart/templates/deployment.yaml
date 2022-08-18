@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deployment.name }}
+    spec:
+      dnsConfig:
+        searches: {{ .Values.pods.network.dns_suffix | list }}
+      containers:
+        - name: {{ .Values.deployment.name }}
+          image: "{{ .Values.deployment.image }}"
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          env:
+          - name: MONGODB_USER
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.mongoCredentials.name }}
+                key: mongodb_user
+          - name: MONGODB_PW
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.mongoCredentials.name }}
+                key: mongodb_pwd
+          - name: MONGODB_REPLICA_SET
+            value: {{ .Values.mongoCredentials.replicaSet }}
+          - name: MONGODB_HOST1
+            value: {{ .Values.mongoCredentials.host1 | quote }}
+          - name: MONGODB_HOST2
+            value: {{ .Values.mongoCredentials.host2 | quote }}
+          - name: MONGODB_HOST3
+            value: {{ .Values.mongoCredentials.host3 | quote }}
+          - name: MONGODB_PORT1
+            value: {{ .Values.mongoCredentials.port1 | quote }}
+          - name: MONGODB_PORT2
+            value: {{ .Values.mongoCredentials.port2 | quote }}
+          - name: MONGODB_PORT3
+            value: {{ .Values.mongoCredentials.port3 | quote }}
