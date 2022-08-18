@@ -102,6 +102,7 @@
 ## to install nginx using helm charts
 - https://www.golinuxcloud.com/kubernetes-helm-charts/#51_Create_a_new_chart
 - helm create nginx-chart
+- Simple example of the helm chart is in \Helm\nginx-chart
 - helm lint nginx-chart
 - helm install --dry-run nginx nginx-chart/
 - helm install nginx nginx-chart/
