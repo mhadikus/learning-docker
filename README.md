@@ -102,7 +102,6 @@
 ## to install nginx using helm charts
 - https://www.golinuxcloud.com/kubernetes-helm-charts/#51_Create_a_new_chart
 - helm create nginx-chart
-- Simple example of the helm chart is in \Helm\nginx-chart
 - helm lint nginx-chart
 - helm install --dry-run nginx nginx-chart/
 - helm install nginx nginx-chart/
@@ -111,3 +110,7 @@
 - browse to http://localhost:30004
 - If `nodePort` is not specified in `service.yaml`, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
 - helm uninstall nginx
+
+## Example Helm Charts
+- Simple example of the nginx helm chart: `\Helm\nginx-chart`
+- Example of a web application with secrets and ingress: `\Helm\my-web-app-chart`
