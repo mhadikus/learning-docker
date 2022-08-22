@@ -25,10 +25,14 @@
 
 ## to run a command in a running container
 - docker exec -it <container_id_or_name> /bin/bash
+- docker exec -it <container_id_or_name> sh
 - docker exec -it <container_id_or_name> echo foo && echo bar
 
 ## to stop a container
 - docker stop <container_id_or_name>
+
+## to restart a container
+- docker restart <container_id_or_name>
 
 ## to start a container in detached mode
 - docker container start <container_id_or_name>
