@@ -15,10 +15,14 @@
 ## run the image
 - docker run python-hello-world
 - docker container run --name fastapi_get_container -t -p 10000:10000 fastapi-get:latest
+- to always restart the container, use --restart always
 
 ## run an image in the background with bash
 - docker run -it -d --name <container_id_or_name> <image_name> bash
 - docker container run -d --name fastapi_get_container -t -p 10000:10000 fastapi-get:latest
+
+## to get information about a container
+- docker inspect <container_id_or_name>
 
 ## to list all containers
 - docker container ls -a
