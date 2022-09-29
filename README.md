@@ -17,6 +17,10 @@
 - docker container run --name fastapi_get_container -t -p 10000:10000 fastapi-get:latest
 - to always restart the container, use --restart always
 
+## to enable/disable automatic restart of the container
+- docker update --restart=always <container_id_or_name>
+- docker update --restart=no <container_id_or_name>
+
 ## run an image in the background with bash
 - docker run -it -d --name <container_id_or_name> <image_name> bash
 - docker container run -d --name fastapi_get_container -t -p 10000:10000 fastapi-get:latest
