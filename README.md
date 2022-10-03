@@ -50,6 +50,7 @@
 
 ## to fetch the logs of a container
 - docker logs <container_id_or_name>
+- docker logs --tail 50 <container_id_or_name>
 
 ## to delete a container
 - docker rm <container_id_or_name>
